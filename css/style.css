@@ -88,7 +88,7 @@ h6 {
   width: 96px;
   height: 96px;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 12%;
   border: 8px solid #2c2f3f;
 }
 
@@ -497,7 +497,7 @@ section {
   border-radius: 8px;
   display: block;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 12%;
   width: 100%;
 }
 
