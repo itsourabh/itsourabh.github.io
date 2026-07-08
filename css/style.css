@@ -236,8 +236,8 @@ h6 {
   width: 100%;
   height: 100vh;
   background:
-    linear-gradient(110deg, rgba(5, 13, 24, 0.92), rgba(15, 72, 104, 0.82)),
-    url("../assets/img/bg.jpg") center center;
+    linear-gradient(105deg, rgba(3, 10, 20, 0.96) 0%, rgba(5, 22, 39, 0.88) 42%, rgba(5, 13, 24, 0.42) 100%),
+    url("../assets/img/ai-hero-bg.png") center center;
   background-size: cover;
 }
 
@@ -697,6 +697,31 @@ section {
   top: 0;
   background: #fff;
   border: 2px solid #1f5297;
+}
+
+.resume-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.resume-actions .btn-secondary {
+  border-color: #149ddd;
+  color: #149ddd;
+  cursor: pointer;
+}
+
+.resume-actions .btn-secondary:hover {
+  background: #149ddd;
+  color: #fff;
+}
+
+.resume-file-name {
+  color: #45505b;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 /*--------------------------------------------------------------

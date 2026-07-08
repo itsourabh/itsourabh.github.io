@@ -78,7 +78,7 @@
     <div class="hero-container" data-aos="fade-in">
       <span class="hero-eyebrow">B.Tech Artificial Intelligence Graduate</span>
       <h1>Sourabh Gupta</h1>
-      <p>I'm a <span class="typed" data-typed-items="Data Analyst, Data Engineer, AI/ML Engineer, Python Developer">Data Analyst</span></p>
+      <p>I'm a <span class="typed" data-typed-items="Data Analyst, Data Engineer, AI/ML Engineer">Data Analyst</span></p>
       <p class="hero-summary">I build analysis workflows, clean datasets, dashboard-ready metrics, and beginner-to-intermediate ML solutions with Python, SQL, Pandas, and Scikit-learn.</p>
       <div class="hero-actions">
         <a href="#portfolio" class="btn-primary scrollto">View Projects</a>
@@ -108,7 +108,7 @@
             <div class="about-card">
               <img src="assets/img/formal-profile-front.png" alt="Sourabh Gupta front-facing formal IT profile photo" class="about-photo">
               <h4>Open to opportunities</h4>
-              <p>Data Analyst, Data Engineer, AI/ML, Python Developer</p>
+              <p>Data Analyst, Data Engineer, AI/ML</p>
             </div>
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
@@ -205,6 +205,12 @@
         <div class="section-title">
           <h2>Resume</h2>
           <p>Education, training, and project experience aligned with analytics, data engineering, and AI/ML roles.</p>
+          <div class="resume-actions">
+            <a href="assets/resume/Sourabh_Gupta_Resume.pdf" class="btn-primary" target="_blank" rel="noopener">View Resume PDF</a>
+            <label class="btn-secondary resume-upload" for="resumeUpload">Upload Resume PDF</label>
+            <input type="file" id="resumeUpload" accept="application/pdf" hidden>
+            <span id="resumeFileName" class="resume-file-name">No PDF selected</span>
+          </div>
         </div>
 
         <div class="row">
@@ -454,6 +460,13 @@
         typedElement.textContent = items[index];
       }, 1800);
     }
+
+    const resumeUpload = document.getElementById('resumeUpload');
+    const resumeFileName = document.getElementById('resumeFileName');
+    resumeUpload?.addEventListener('change', function () {
+      const file = this.files?.[0];
+      resumeFileName.textContent = file ? file.name : 'No PDF selected';
+    });
   </script>
 
 </body>
