@@ -85,8 +85,14 @@ h6 {
 #header .profile img {
   margin: 15px auto;
   display: block;
-  width: 120px;
+  width: 96px;
+  height: 96px;
+  object-fit: cover;
   border: 8px solid #2c2f3f;
+}
+
+#header .profile .profile-photo {
+  border-radius: 50%;
 }
 
 #header .profile h1 {
@@ -228,13 +234,15 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.jpg") left center;
+  background:
+    linear-gradient(110deg, rgba(5, 13, 24, 0.92), rgba(15, 72, 104, 0.82)),
+    url("../assets/img/bg.jpg") center center;
   background-size: cover;
 }
 
 #hero:before {
   content: "";
-  background: rgba(5, 13, 24, 0.3);
+  background: rgba(5, 13, 24, 0.18);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -246,7 +254,9 @@ h6 {
 #hero .hero-container {
   position: relative;
   z-index: 2;
+  max-width: 760px;
   min-width: 300px;
+  padding: 0 24px;
 }
 
 #hero h1 {
@@ -267,8 +277,49 @@ h6 {
 #hero p span {
   color: #fff;
   padding-bottom: 4px;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   border-bottom: 3px solid #149ddd;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: #149ddd;
+  border: 1px solid #149ddd;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #0d7fb5;
+  border-color: #0d7fb5;
+  color: #fff;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #173b6c;
 }
 
 @media (min-width: 1024px) {
@@ -294,7 +345,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 68px 0;
   overflow: hidden;
 }
 
@@ -363,6 +414,38 @@ section {
 
 .about .content p:last-child {
   margin-bottom: 0;
+}
+
+.role-skills h4 {
+  color: #173b6c;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.role-skills ul {
+  background: #fff;
+  border: 1px solid #e7edf5;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(20, 157, 221, 0.08);
+  list-style: none;
+  min-height: 250px;
+  padding: 22px;
+}
+
+.role-skills li {
+  color: #45505b;
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
+}
+
+.role-skills li::before {
+  color: #149ddd;
+  content: "\f26a";
+  font-family: "bootstrap-icons";
+  left: 0;
+  position: absolute;
 }
 
 /*--------------------------------------------------------------
@@ -517,6 +600,52 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.project-grid {
+  row-gap: 24px;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #e7edf5;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(20, 157, 221, 0.08);
+  height: 100%;
+  padding: 24px;
+}
+
+.project-card h4 {
+  color: #173b6c;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 12px 0;
+}
+
+.project-card p {
+  color: #45505b;
+}
+
+.project-card .tools {
+  color: #272829;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.project-card a {
+  font-weight: 700;
+}
+
+.project-tag {
+  background: #eef8fd;
+  border: 1px solid #cdeefa;
+  border-radius: 999px;
+  color: #0d7fb5;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 10px;
+}
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
@@ -901,6 +1030,40 @@ section {
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
+  background: #149ddd;
+  color: #fff;
+}
+
+.contact-cta {
+  background: #fff;
+  border: 1px solid #e7edf5;
+  border-radius: 8px;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.08);
+  min-height: 100%;
+  padding: 34px;
+  width: 100%;
+}
+
+.contact-cta h3 {
+  color: #173b6c;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-actions .btn-secondary {
+  border-color: #149ddd;
+  color: #149ddd;
+}
+
+.contact-actions .btn-secondary:hover {
   background: #149ddd;
   color: #fff;
 }
