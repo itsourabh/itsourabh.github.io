@@ -718,10 +718,24 @@ section {
   color: #fff;
 }
 
+.resume-actions .btn-secondary.disabled {
+  background: #eef2f7;
+  border-color: #d6dee9;
+  color: #7a8594;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .resume-file-name {
   color: #45505b;
   font-size: 14px;
   font-weight: 600;
+}
+
+.resume-note {
+  color: #6b7280;
+  font-size: 13px;
+  margin: 12px 0 0;
 }
 
 /*--------------------------------------------------------------

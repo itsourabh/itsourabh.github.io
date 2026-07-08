@@ -206,11 +206,12 @@
           <h2>Resume</h2>
           <p>Education, training, and project experience aligned with analytics, data engineering, and AI/ML roles.</p>
           <div class="resume-actions">
-            <a href="assets/resume/Sourabh_Gupta_Resume.pdf" class="btn-primary" target="_blank" rel="noopener">View Resume PDF</a>
-            <label class="btn-secondary resume-upload" for="resumeUpload">Upload Resume PDF</label>
+            <label class="btn-primary resume-upload" for="resumeUpload">Upload Resume PDF</label>
             <input type="file" id="resumeUpload" accept="application/pdf" hidden>
+            <a href="#" id="resumeDownload" class="btn-secondary disabled" aria-disabled="true">Download Selected PDF</a>
             <span id="resumeFileName" class="resume-file-name">No PDF selected</span>
           </div>
+          <p class="resume-note">For the live website, add your resume PDF to the repository at <strong>assets/resume/Sourabh_Gupta_Resume.pdf</strong>.</p>
         </div>
 
         <div class="row">
@@ -463,9 +464,32 @@
 
     const resumeUpload = document.getElementById('resumeUpload');
     const resumeFileName = document.getElementById('resumeFileName');
+    const resumeDownload = document.getElementById('resumeDownload');
+    let resumeObjectUrl;
+
     resumeUpload?.addEventListener('change', function () {
       const file = this.files?.[0];
-      resumeFileName.textContent = file ? file.name : 'No PDF selected';
+
+      if (resumeObjectUrl) {
+        URL.revokeObjectURL(resumeObjectUrl);
+        resumeObjectUrl = undefined;
+      }
+
+      if (!file) {
+        resumeFileName.textContent = 'No PDF selected';
+        resumeDownload.href = '#';
+        resumeDownload.classList.add('disabled');
+        resumeDownload.setAttribute('aria-disabled', 'true');
+        resumeDownload.removeAttribute('download');
+        return;
+      }
+
+      resumeObjectUrl = URL.createObjectURL(file);
+      resumeFileName.textContent = file.name;
+      resumeDownload.href = resumeObjectUrl;
+      resumeDownload.download = file.name;
+      resumeDownload.classList.remove('disabled');
+      resumeDownload.setAttribute('aria-disabled', 'false');
     });
   </script>
 
